@@ -59,6 +59,9 @@ app.post('/postfile', function (req, res) {
             }
            
         });
+        form.on('field', function(name, field) {
+            console.log('Got a field:', name, field);
+        })
 
         form.parse(req, (err, fields, files) => {
             if (err) {
