@@ -1,24 +1,24 @@
 const multer = require("multer");
 const path = require("path");
-const Photo = require("./../models/Photo.js");
-const mongoose = require("mongoose");
+// const Photo = require("./../models/Photo.js");
+// const mongoose = require("mongoose");
 const fs = require('fs');
 const request = require('request');
 const formidable = require('formidable');
 
-mongoose.connect(
-  "mongodb://localhost/fileupload",
-  (err, db) => {
-    var collection = db.collection("photos");
-    collection.find({}).toArray((err, docs) => {
-      // console.log(docs);
-      // db.dropCollection("photos", (err, result) => {
-      //     console.log('Database dropped!');
-      //     db.close();
-      // });
-    });
-  }
-);
+// mongoose.connect(
+//   "mongodb://localhost/fileupload",
+//   (err, db) => {
+//     var collection = db.collection("photos");
+//     collection.find({}).toArray((err, docs) => {
+//       // console.log(docs);
+//       // db.dropCollection("photos", (err, result) => {
+//       //     console.log('Database dropped!');
+//       //     db.close();
+//       // });
+//     });
+//   }
+// );
 
 var storage = multer.diskStorage({
   destination: function(req, file, callback) {
@@ -32,23 +32,23 @@ var storage = multer.diskStorage({
 });
 
 module.exports.home = function(req, res) {
-  Photo.find(function(err, data) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render("./../public/views/index.ejs", { photos: data });
-    }
-  });
+  // Photo.find(function(err, data) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     res.render("./../public/views/index.ejs", { photos: data });
+  //   }
+  // });
 };
 
 module.exports.multer = function(req, res) {
-  Photo.find(function(err, data) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render("./../public/views/multer.ejs", { photos: data });
-    }
-  });
+  // Photo.find(function(err, data) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     res.render("./../public/views/multer.ejs", { photos: data });
+  //   }
+  // });
 };
 
 module.exports.dropbox = function(req, res) {

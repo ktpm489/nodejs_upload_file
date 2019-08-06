@@ -1,17 +1,17 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+// var mongoose = require('mongoose');
+// var Schema = mongoose.Schema;
 
-var PhotoSchema = new Schema({
-    caption: {
-        type: String,
-        default: 'Photo'
-    },
+// var PhotoSchema = new Schema({
+//     caption: {
+//         type: String,
+//         default: 'Photo'
+//     },
     
-    src: {
-        type: String,
-        required: 'You must select an image'
-    }
-});
+//     src: {
+//         type: String,
+//         required: 'You must select an image'
+//     }
+// });
 
-var Photo = mongoose.model('Photo', PhotoSchema, 'photos');
-module.exports = Photo;
+// var Photo = mongoose.model('Photo', PhotoSchema, 'photos');
+// module.exports = Photo;
